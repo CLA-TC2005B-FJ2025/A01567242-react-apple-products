@@ -7,6 +7,10 @@ import airpods from './svg/airpods.svg'
 import heart from './svg/heart.svg'
 import { useState } from 'react'
 
+import './AppleProduct.css'
+
+
+
 const mapaSVG = {iphone, ipad, watch, imac, macbook, airpods};
 
 
@@ -16,10 +20,10 @@ export function AppleProduct( props ) {
     setClicks(clicks+1);
   }
   return (
-    <div onClick={manejarClick}>
-      Producto {props.type} lleva {clicks} clicks
-      <img alt= "producto" src={mapaSVG[props.type]} width={200}/>
-      <img alt="heart" src={heart} style={{width:10+10*clicks+ 'px'}}/>
+    <div className="apple-product" onClick={manejarClick}>
+      
+      <img className='product' alt= "producto" src={mapaSVG[props.type]} width={200}/>
+      <img className='heart' alt="heart" src={heart} style={{width:10+10*clicks+ 'px'}}/>
     </div>
   )
 }
